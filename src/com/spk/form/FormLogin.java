@@ -70,7 +70,7 @@ public class FormLogin extends Form{
         lbUsername.putClientProperty(FlatClientProperties.STYLE, "foreground:@accentColor;");
         
         txtUsername = new JTextField();
-        txtUsername.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "username");
+        txtUsername.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Username");
         txtUsername.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
         txtUsername.putClientProperty(FlatClientProperties.TEXT_FIELD_LEADING_ICON, new FlatSVGIcon("com/spk/icons/username.svg", 20, 20));
         txtUsername.putClientProperty(FlatClientProperties.STYLE, "arc:10;");
@@ -78,7 +78,7 @@ public class FormLogin extends Form{
         JLabel lbPassword = new JLabel("Password");
         lbPassword.putClientProperty(FlatClientProperties.STYLE, "foreground:@accentColor");
         txtPassword = new JPasswordField();
-        txtPassword.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "password");
+        txtPassword.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Password");
         txtPassword.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
         txtPassword.putClientProperty(FlatClientProperties.TEXT_FIELD_LEADING_ICON, new FlatSVGIcon("com/spk/icons/password.svg", 20, 20));
         txtPassword.putClientProperty(FlatClientProperties.STYLE, ""
