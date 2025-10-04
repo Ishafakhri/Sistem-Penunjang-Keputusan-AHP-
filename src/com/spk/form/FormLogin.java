@@ -2,6 +2,7 @@ package com.spk.form;
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
 import com.spk.main.Form;
+import com.spk.main.FormManager;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -109,6 +110,9 @@ public class FormLogin extends Form{
         mainPanel.add(panelLogo);
         
         add(mainPanel);
-             
+        
+        btnLogin.addActionListener((e) -> {
+           FormManager.login();
+        });
     }
 }

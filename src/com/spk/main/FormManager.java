@@ -27,12 +27,24 @@ public class FormManager {
         }
     }
     
+    public static void login(){
+        loggedInUser = "";
+        Drawer.installDrawer(frame, new Menu());
+        Drawer.setVisible(true);
+        
+        frame.getContentPane().removeAll();
+        frame.getContentPane().add(getMainForm());
+        frame.repaint();
+        frame.revalidate();
+    }
+    
+    
     public static void logout(){
-//        if(loggedInUser == null){
-////            Drawer.installDrawer(frame, new Menu());
-//        }
-//        
-//        Drawer.setVisible(false);
+        if(loggedInUser == null){
+            Drawer.installDrawer(frame, new Menu());
+        }
+        
+        Drawer.setVisible(false);
         frame.getContentPane().removeAll();
         FormLogin login = getLogin();
         login.formCheck();
