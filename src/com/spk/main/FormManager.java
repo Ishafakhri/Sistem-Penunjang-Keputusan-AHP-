@@ -1,6 +1,9 @@
 package com.spk.main;
 
+import com.spk.dao.UserDAO;
 import com.spk.form.FormLogin;
+import com.spk.form.FormRegistrasi;
+import com.spk.service.ServiceUser;
 import javax.swing.JFrame;
 import raven.modal.Drawer;
 import raven.modal.demo.utils.UndoRedo;
@@ -15,7 +18,14 @@ public class FormManager {
 
     public static void install(JFrame f){
         frame = f;
-        logout();
+        
+        ServiceUser servis = new UserDAO();
+        
+        if(!servis.isUserExist()){
+            registrasi();
+        }else{
+            logout();
+        }
     }
     
     public static void showForm(Form form){
@@ -49,6 +59,21 @@ public class FormManager {
         FormLogin login = getLogin();
         login.formCheck();
         frame.getContentPane().add(login);
+        FORMS.clear();
+        frame.repaint();
+        frame.revalidate();     
+    }
+    
+    public static void registrasi(){
+        if(loggedInUser == null){
+            Drawer.installDrawer(frame, new Menu());
+        }
+        
+        Drawer.setVisible(false);
+        frame.getContentPane().removeAll();
+        FormRegistrasi formRegistrasi = new FormRegistrasi();
+//        formRegistrasi.formCheck();
+        frame.getContentPane().add(formRegistrasi);
         FORMS.clear();
         frame.repaint();
         frame.revalidate();     
